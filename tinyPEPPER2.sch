@@ -30,7 +30,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:custom
 LIBS:tinyPEPPER2-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -110,18 +110,6 @@ F 3 "~" H 1600 4150 60  0000 C CNN
 	1    1600 4150
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	1900 2450 4700 2450
-Wire Wire Line
-	1900 2700 4700 2700
-Wire Wire Line
-	1900 3350 2900 3350
-Wire Wire Line
-	1900 3600 3050 3600
-Wire Wire Line
-	1900 3850 2950 3850
-Wire Wire Line
-	1900 4150 2850 4150
 Text Label 2000 2450 0    60   ~ 0
 VCC
 Text Label 2000 2700 0    60   ~ 0
@@ -138,72 +126,38 @@ F1 "single_esc.sch" 50
 F2 "RC_IN" I L 4700 3100 60 
 F3 "VCC" I L 4700 2450 60 
 F4 "GND" I L 4700 2700 60 
+F5 "3V3" I R 6600 2500 60 
 $EndSheet
-Wire Wire Line
-	4700 3100 2900 3100
-Wire Wire Line
-	2900 3100 2900 3350
-Wire Wire Line
-	3050 3600 3050 4250
-Wire Wire Line
-	3050 4250 4700 4250
-Wire Wire Line
-	4450 3900 4700 3900
-Wire Wire Line
-	4450 2700 4450 6150
-Connection ~ 4450 2700
-Wire Wire Line
-	4600 2450 4600 5950
-Wire Wire Line
-	4600 3700 4700 3700
-Connection ~ 4600 2450
 $Sheet
-S 4700 3600 2450 800 
+S 4700 3600 1900 850 
 U 57F7B0C0
 F0 "single esc 2" 50
 F1 "single_esc.sch" 50
 F2 "RC_IN" I L 4700 4250 60 
 F3 "VCC" I L 4700 3700 60 
 F4 "GND" I L 4700 3900 60 
+F5 "3V3" I R 6600 3775 60 
 $EndSheet
 $Sheet
-S 4700 4700 2000 800 
+S 4700 4700 1900 800 
 U 57FB3AAC
 F0 "single esc 3" 60
 F1 "single_esc.sch" 60
 F2 "RC_IN" I L 4700 5350 60 
 F3 "VCC" I L 4700 4800 60 
 F4 "GND" I L 4700 5000 60 
+F5 "3V3" I R 6600 4825 60 
 $EndSheet
 $Sheet
-S 4750 5850 1900 800 
+S 4750 5850 1850 775 
 U 57FB3AF9
 F0 "single esc 4" 60
 F1 "single_esc.sch" 60
 F2 "RC_IN" I L 4750 6500 60 
 F3 "VCC" I L 4750 5950 60 
 F4 "GND" I L 4750 6150 60 
+F5 "3V3" I R 6600 5975 60 
 $EndSheet
-Wire Wire Line
-	4750 6500 2850 6500
-Wire Wire Line
-	2850 6500 2850 4150
-Wire Wire Line
-	2950 3850 2950 5350
-Wire Wire Line
-	2950 5350 4700 5350
-Wire Wire Line
-	4450 6150 4750 6150
-Connection ~ 4450 3900
-Wire Wire Line
-	4700 5000 4450 5000
-Connection ~ 4450 5000
-Wire Wire Line
-	4600 5950 4750 5950
-Connection ~ 4600 3700
-Wire Wire Line
-	4600 4800 4700 4800
-Connection ~ 4600 4800
 $Comp
 L CUSTOM_C C1000
 U 1 1 57FCB86E
@@ -215,12 +169,6 @@ F 3 "" H 2800 2250 60  0000 C CNN
 	1    2800 2250
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	2600 2250 2600 2450
-Connection ~ 2600 2450
-Wire Wire Line
-	3000 2250 3000 2700
-Connection ~ 3000 2700
 $Comp
 L hole H1
 U 1 1 58465F4C
@@ -265,8 +213,163 @@ F 3 "" H 10200 2700 60  0000 C CNN
 	1    10200 2700
 	-1   0    0    1   
 $EndComp
+$Comp
+L AP131-30 U1
+U 1 1 58AF3EE4
+P 2250 1850
+F 0 "U1" H 2250 2217 50  0000 C CNN
+F 1 "AP131-30" H 2250 2126 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23-5" H 2250 1450 50  0001 C CNN
+F 3 "" H 2250 1850 50  0000 C CNN
+	1    2250 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C1001
+U 1 1 58AF4B96
+P 3300 2000
+F 0 "C1001" H 3415 2046 50  0000 L CNN
+F 1 "100n" H 3415 1955 50  0000 L CNN
+F 2 "custom:C_0402_CUSTOM" H 3338 1850 50  0001 C CNN
+F 3 "" H 3300 2000 50  0000 C CNN
+	1    3300 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C1002
+U 1 1 58AF50DD
+P 1425 1950
+F 0 "C1002" H 1540 1996 50  0000 L CNN
+F 1 "100n" H 1540 1905 50  0000 L CNN
+F 2 "custom:C_0402_CUSTOM" H 1463 1800 50  0001 C CNN
+F 3 "" H 1425 1950 50  0000 C CNN
+	1    1425 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1900 2450 4700 2450
+Wire Wire Line
+	1900 2700 4700 2700
+Wire Wire Line
+	1900 3350 2900 3350
+Wire Wire Line
+	1900 3600 3050 3600
+Wire Wire Line
+	1900 3850 2950 3850
+Wire Wire Line
+	1900 4150 2850 4150
+Wire Wire Line
+	4700 3100 2900 3100
+Wire Wire Line
+	2900 3100 2900 3350
+Wire Wire Line
+	3050 3600 3050 4250
+Wire Wire Line
+	3050 4250 4700 4250
+Wire Wire Line
+	4450 3900 4700 3900
+Wire Wire Line
+	4450 2700 4450 6150
+Connection ~ 4450 2700
+Wire Wire Line
+	4600 2450 4600 5950
+Wire Wire Line
+	4600 3700 4700 3700
+Connection ~ 4600 2450
+Wire Wire Line
+	4750 6500 2850 6500
+Wire Wire Line
+	2850 6500 2850 4150
+Wire Wire Line
+	2950 3850 2950 5350
+Wire Wire Line
+	2950 5350 4700 5350
+Wire Wire Line
+	4450 6150 4750 6150
+Connection ~ 4450 3900
+Wire Wire Line
+	4700 5000 4450 5000
+Connection ~ 4450 5000
+Wire Wire Line
+	4600 5950 4750 5950
+Connection ~ 4600 3700
+Wire Wire Line
+	4600 4800 4700 4800
+Connection ~ 4600 4800
+Wire Wire Line
+	2600 2250 2600 2450
+Connection ~ 2600 2450
+Wire Wire Line
+	3000 2250 3000 2700
+Connection ~ 3000 2700
 Wire Wire Line
 	2600 2250 2650 2250
 Wire Wire Line
 	2950 2250 3000 2250
+Wire Wire Line
+	6600 5975 7475 5975
+Wire Wire Line
+	7475 5975 7475 1750
+Wire Wire Line
+	7475 1750 2550 1750
+Wire Wire Line
+	6600 2500 7475 2500
+Connection ~ 7475 2500
+Wire Wire Line
+	6600 3775 7475 3775
+Connection ~ 7475 3775
+Wire Wire Line
+	6600 4825 7475 4825
+Connection ~ 7475 4825
+Wire Wire Line
+	3300 1850 3300 1750
+Connection ~ 3300 1750
+Wire Wire Line
+	3300 2150 3300 2700
+Connection ~ 3300 2700
+Wire Wire Line
+	2250 2150 2250 2700
+Connection ~ 2250 2700
+Wire Wire Line
+	1950 2450 1950 2225
+Wire Wire Line
+	1950 2225 1775 2225
+Wire Wire Line
+	1775 2225 1775 1750
+Wire Wire Line
+	1425 1750 1950 1750
+Connection ~ 1950 2450
+Wire Wire Line
+	1425 1800 1425 1750
+Connection ~ 1775 1750
+Wire Wire Line
+	1425 2100 1025 2100
+Wire Wire Line
+	1025 2100 1025 2975
+Wire Wire Line
+	1025 2975 1975 2975
+Wire Wire Line
+	1975 2975 1975 2700
+Connection ~ 1975 2700
+Wire Wire Line
+	1950 1850 1875 1850
+Wire Wire Line
+	1875 1850 1875 1750
+Connection ~ 1875 1750
+$Comp
+L C C1003
+U 1 1 58AF6E2A
+P 3075 2000
+F 0 "C1003" H 3190 2046 50  0000 L CNN
+F 1 "10n" H 3190 1955 50  0000 L CNN
+F 2 "custom:C_0402_CUSTOM" H 3113 1850 50  0001 C CNN
+F 3 "" H 3075 2000 50  0000 C CNN
+	1    3075 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 1850 3075 1850
+Wire Wire Line
+	3075 2150 3075 2700
+Connection ~ 3075 2700
 $EndSCHEMATC
