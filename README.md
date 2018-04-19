@@ -11,9 +11,10 @@ Of course it also runs BLHELI_S.
 
 Key features:
 - 16x16mm hole-to-hole spacing
-- 1.2g (!)
+- 1.4g (!)
 - BLHeli_S with DSHOT300
-- 2S 
+- 1S or 2S operation
+- 4.8 A continous current
 
 This work is published under the CERN open hardware license v1.2. 
 Feel free to use the design - but make sure to give proper credit 
